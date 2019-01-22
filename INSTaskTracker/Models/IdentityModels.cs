@@ -21,9 +21,9 @@ namespace INSTaskTracker.Models
             return userIdentity;
         }
 
-        public Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
+        public System.Threading.Tasks.Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
         {
-            return Task.FromResult(GenerateUserIdentity(manager));
+            return System.Threading.Tasks.Task.FromResult(GenerateUserIdentity(manager));
         }
     }
 

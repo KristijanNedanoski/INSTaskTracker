@@ -7,18 +7,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace INSTaskTracker.Models
 {
-    public class Task
+    public class Assignment
     {
         [ScaffoldColumn(false)]
         [Key]
         [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid TaskID { get; set; }
+        public Guid AssignmentID { get; set; }
         [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ProjectID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UserID { get; set; }
-        [Required, StringLength(100), Display(Name = "Task Name")]
-        public string TaskName { get; set; }
+        [Required, StringLength(100), Display(Name = "Assignment Name")]
+        public string AssignmentName { get; set; }
         [StringLength(10000), Display(Name = "Description"),
         DataType(DataType.MultilineText)]
         public string Description { get; set; }
