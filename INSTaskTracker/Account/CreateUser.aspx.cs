@@ -9,7 +9,7 @@ using INSTaskTracker.Models;
 
 namespace INSTaskTracker.Account
 {
-    public partial class Register : Page
+    public partial class CreateUser : Page
     {
         protected void CreateUser_Click(object sender, EventArgs e)
         {
@@ -31,6 +31,16 @@ namespace INSTaskTracker.Account
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
+        }
+
+        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="INSTaskTracker.Account.Register" %>
+﻿<%@ Page Title="Create User" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="INSTaskTracker.Account.CreateUser" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
@@ -7,7 +7,7 @@
     </p>
 
     <div class="form-horizontal">
-        <h4>Create a new account</h4>
+        <h4>Create a new User</h4>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
@@ -38,7 +38,13 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
+                <br />
+                <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                    <asp:ListItem Selected="True" Value="ac150c96-4b7e-4ee2-80db-43c33a2c2578">Developer</asp:ListItem>
+                    <asp:ListItem Value="303a40fa-d1ff-45cc-91d2-1380372a47aa">Client</asp:ListItem>
+                </asp:RadioButtonList>
+                <br />
+                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Create User" CssClass="btn btn-default" />
             </div>
         </div>
     </div>
