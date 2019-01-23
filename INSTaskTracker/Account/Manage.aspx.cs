@@ -31,7 +31,6 @@ namespace INSTaskTracker.Account
 
         public bool TwoFactorBrowserRemembered { get; private set; }
 
-        public int LoginsCount { get; set; }
 
         protected void Page_Load()
         {
@@ -44,7 +43,7 @@ namespace INSTaskTracker.Account
 
             TwoFactorEnabled = manager.GetTwoFactorEnabled(User.Identity.GetUserId());
 
-            LoginsCount = manager.GetLogins(User.Identity.GetUserId()).Count;
+           
 
             var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
 

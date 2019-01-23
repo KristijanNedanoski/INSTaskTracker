@@ -28,7 +28,7 @@
                         <td>
                             <asp:Button runat="server" Text="Remove" CommandName="Delete" CausesValidation="false"
                                 ToolTip='<%# "Remove this " + Item.LoginProvider + " login from your account" %>'
-                                Visible="<%# CanRemoveExternalLogins %>" CssClass="btn btn-default" />
+                                
                         </td>
                     </tr>
                 </ItemTemplate>
@@ -36,7 +36,5 @@
 
         </section>
     </div>
-    <div>
-        <uc:OpenAuthProviders runat="server" ReturnUrl="~/Account/ManageLogins" />
-    </div>
+    
 </asp:Content>

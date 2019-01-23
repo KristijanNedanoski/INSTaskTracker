@@ -16,11 +16,7 @@ namespace INSTaskTracker.Account
             get;
             private set;
         }
-        protected bool CanRemoveExternalLogins
-        {
-            get;
-            private set;
-        }
+        
 
         private bool HasPassword(ApplicationUserManager manager)
         {
@@ -30,7 +26,7 @@ namespace INSTaskTracker.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            CanRemoveExternalLogins = manager.GetLogins(User.Identity.GetUserId()).Count() > 1;
+            
 
             SuccessMessage = String.Empty;
             successMessage.Visible = !String.IsNullOrEmpty(SuccessMessage);
@@ -40,7 +36,7 @@ namespace INSTaskTracker.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var accounts = manager.GetLogins(User.Identity.GetUserId());
-            CanRemoveExternalLogins = accounts.Count() > 1 || HasPassword(manager);
+            
             return accounts;
         }
 
