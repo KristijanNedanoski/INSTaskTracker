@@ -14,14 +14,14 @@ namespace INSTaskTracker.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ProjectID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid UserID { get; set; }
+        public string UserID { get; set; }
         [Required, StringLength(100), Display(Name = "Project Name")]
         public string ProjectName { get; set; }
         [Required, Display(Name = "Estimate Time")]
         public int ETime { get; set; }
         [Display(Name = "Real Time")]
         public int RTime { get; set; }
-        [ StringLength(10000), Display(Name = "Description"),
+        [StringLength(10000), Display(Name = "Description"),
         DataType(DataType.MultilineText)]
         public string Description { get; set; }
         [Required, StringLength(100), Display(Name = "Start Date")]

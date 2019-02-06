@@ -14,5 +14,6 @@ namespace INSTaskTracker.Models
         }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<ApplicationUser> AspNetUsers { get; set; }
     }
 }
