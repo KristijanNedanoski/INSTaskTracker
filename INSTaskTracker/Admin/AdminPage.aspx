@@ -1,101 +1,72 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master"
-    AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs"
-    Inherits="INSTaskTracker.Admin.AdminPage" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Administration</h1>
-    <hr />
-    <h3>Add Product:</h3>
-    <table>
-        <tr>
-            <td>
-                <asp:Label ID="LabelAddCategory"
-                    runat="server">Category:</asp:Label></td>
-            <td>
-                <asp:DropDownList ID="DropDownAddCategory" runat="server"
-                    ItemType="WingtipToys.Models.Category"
-                    SelectMethod="GetCategories" DataTextField="CategoryName"
-                    DataValueField="CategoryID">
-                </asp:DropDownList>
-            </td>
-        </tr>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="INSTaskTracker.Admin.AdminPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">    <h1>Administration</h1>
+ <hr />
+ <h3>Add File:</h3>
+<table>
         <tr>
             <td>
                 <asp:Label ID="LabelAddName"
                     runat="server">Name:</asp:Label></td>
             <td>
-                <asp:TextBox ID="AddProductName" runat="server"></asp:TextBox>
+                <asp:TextBox ID="AddProjectName" runat="server" Width="180px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
-                    runat="server" Text="* Product name required."
-                    ControlToValidate="AddProductName" SetFocusOnError="true"
+                    runat="server" Text="* Project name required."
+                    ControlToValidate="AddProjectName" SetFocusOnError="true"
+                    Display="Dynamic"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+       <tr>
+           <td>
+        <asp:Label ID="LabelAddEstimatedTime"
+                    runat="server">Estimated Time:</asp:Label></td>         
+            <td>
+                <asp:TextBox ID="AddProjectEstimatedTime" runat="server" Width="180px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
+                    runat="server" Text="* Estimated time required."
+                    ControlToValidate="AddProjectEstimatedTime" SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
+            <td>
+            <asp:Label ID="LabelAddStartDate"
+                    runat="server">Start Date:</asp:Label></td>
+            <td>
+                <asp:TextBox ID="AddProjectStartDate" runat="server" Width="180px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4"
+                    runat="server" Text="* Project start date required."
+                    ControlToValidate="AddProjectStartDate" SetFocusOnError="true"
+                    Display="Dynamic"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+    <tr>
             <td>
                 <asp:Label ID="LabelAddDescription"
                     runat="server">Description:</asp:Label></td>
             <td>
-                <asp:TextBox ID="AddProductDescription"
-                    runat="server"></asp:TextBox>
+                <asp:TextBox ID="AddProjectDescription"
+                    runat="server" Width="180px" Rows="2" TextMode="MultiLine"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
                     runat="server" Text="* Description required."
-                    ControlToValidate="AddProductDescription" SetFocusOnError="true"
+                    ControlToValidate="AddProjectDescription" SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
-        <tr>
-            <td>
-                <asp:Label ID="LabelAddPrice"
-                    runat="server">Price:</asp:Label></td>
-            <td>
-                <asp:TextBox ID="AddProductPrice" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
-                    runat="server" Text="* Price required." ControlToValidate="AddProductPrice"
-                    SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator
-                    ID="RegularExpressionValidator1" runat="server" Text="* Must be a valid price
-without $."
-                    ControlToValidate="AddProductPrice" SetFocusOnError="True"
-                    Display="Dynamic" ValidationExpression="^[0-9]*(\.)?[0-9]?[0-
-9]?$"></asp:RegularExpressionValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Label ID="LabelAddImageFile" runat="server">Image
-File:</asp:Label></td>
-            <td>
-                <asp:FileUpload ID="ProductImage" runat="server" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4"
-                    runat="server" Text="* Image path required." ControlToValidate="ProductImage"
-                    SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
+
+    <p></p>
+        <p></p>
     </table>
-    <p></p>
-    <p></p>
-    <asp:Button ID="AddProjectButton" runat="server" Text="Add Product"
+    <p>
+        <td>
+                <asp:Label ID="Label1" runat="server">Client:</asp:Label></td>
+        <asp:DropDownList ID="ProjectUser" runat="server">
+        </asp:DropDownList>
+    
+    </p>
+    <p>
+        
+    <asp:Button ID="AddProjectButton" runat="server" Text="Add Project"
         OnClick="AddProjectButton_Click" CausesValidation="true" />
     <asp:Label ID="LabelAddStatus" runat="server" Text=""></asp:Label>
-    <p></p>
-    <h3>Remove Product:</h3>
-    <table>
-        <tr>
-            <td>
-                <asp:Label ID="LabelRemoveProduct"
-                    runat="server">Product:</asp:Label></td>
-            <td>
-                <asp:DropDownList ID="DropDownRemoveProduct" runat="server"
-                    ItemType="WingtipToys.Models.Product"
-                    SelectMethod="GetProducts" AppendDataBoundItems="true"
-                    DataTextField="ProductName" DataValueField="ProductID">
-                </asp:DropDownList>
-            </td>
-        </tr>
-    </table>
-    <p></p>
-    <asp:Button ID="RemoveProductButton" runat="server" Text="Remove Product"
-        OnClick="RemoveProductButton_Click" CausesValidation="false" />
-    <asp:Label ID="LabelRemoveStatus" runat="server" Text=""></asp:Label>
-</asp:Content>
+    
+    </p></asp:Content>
