@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using INSTaskTracker.Models;
 using INSTaskTracker.Logic;
+using System.Web.ModelBinding;
+
 namespace INSTaskTracker.Admin
 {
     public partial class AdminPage : System.Web.UI.Page
@@ -78,11 +80,23 @@ namespace INSTaskTracker.Admin
                 }
                 else
                 {
-                    LabelRemoveStatus.Text = "Unable to locate product.";
+                    LabelRemoveStatus.Text = "Unable to locate project.";
                 }
             }
         }
+        /*public IQueryable GetClients()
+        {
+            var _db = new INSTaskTracker.Models.ProjectAssignmentContext();
+            IQueryable<ApplicationUser> clients = _db.AspNetUsers;
+            var query = clients.Where(p => p.Roles.Any(r => r.RoleId == "9292080a-931f-493d-80f1-d150079d8b5a"));
+            return query;
+        }*/
+        public IQueryable GetClients()
+        {
+            var _db = new INSTaskTracker.Models.ProjectAssignmentContext();
+            IQueryable<ApplicationUser> query = _db.AspNetUsers;
+            return query;
+        }
 
-        
     }
 }

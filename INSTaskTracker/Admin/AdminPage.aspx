@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="INSTaskTracker.Admin.AdminPage" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">    <h1>Administration</h1>
- <hr />
- <h3>Add File:</h3>
-<table>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h1>Administration</h1>
+    <hr />
+    <h3>Add File:</h3>
+    <table>
         <tr>
             <td>
                 <asp:Label ID="LabelAddName"
@@ -15,10 +17,10 @@
                     Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
-       <tr>
-           <td>
-        <asp:Label ID="LabelAddEstimatedTime"
-                    runat="server">Estimated Time:</asp:Label></td>         
+        <tr>
+            <td>
+                <asp:Label ID="LabelAddEstimatedTime"
+                    runat="server">Estimated Time:</asp:Label></td>
             <td>
                 <asp:TextBox ID="AddProjectEstimatedTime" runat="server" Width="180px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
@@ -29,7 +31,7 @@
         </tr>
         <tr>
             <td>
-            <asp:Label ID="LabelAddStartDate"
+                <asp:Label ID="LabelAddStartDate"
                     runat="server">Start Date:</asp:Label></td>
             <td>
                 <asp:TextBox ID="AddProjectStartDate" runat="server" Width="180px"></asp:TextBox>
@@ -39,7 +41,7 @@
                     Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
-    <tr>
+        <tr>
             <td>
                 <asp:Label ID="LabelAddDescription"
                     runat="server">Description:</asp:Label></td>
@@ -52,21 +54,22 @@
                     Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
-
-    <p></p>
-        <p></p>
+        <tr>
+            <td>
+                <asp:Label ID="Label1" runat="server">Client:</asp:Label></td>
+            <td>
+                <asp:DropDownList ID="ProjectUser" runat="server"
+                    SelectMethod="GetClients" AppendDataBoundItems="true"
+                    DataTextField="UserName" DataValueField="Id">
+                </asp:DropDownList>
+            </td>
+        </tr>
     </table>
     <p>
-        <td>
-                <asp:Label ID="Label1" runat="server">Client:</asp:Label></td>
-        <asp:DropDownList ID="ProjectUser" runat="server">
-        </asp:DropDownList>
-    
+        <br>
+        <asp:Button ID="AddProjectButton" runat="server" Text="Add Project"
+            OnClick="AddProjectButton_Click" CausesValidation="true" />
+        <asp:Label ID="LabelAddStatus" runat="server" Text=""></asp:Label>
+
     </p>
-    <p>
-        
-    <asp:Button ID="AddProjectButton" runat="server" Text="Add Project"
-        OnClick="AddProjectButton_Click" CausesValidation="true" />
-    <asp:Label ID="LabelAddStatus" runat="server" Text=""></asp:Label>
-    
-    </p></asp:Content>
+</asp:Content>
