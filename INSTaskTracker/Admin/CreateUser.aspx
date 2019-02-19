@@ -40,8 +40,8 @@
             <div class="col-md-offset-2 col-md-10">
                 <br />
                 <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                    <asp:ListItem Selected="True" Value="5aca25b1-2582-4dcc-87c2-fba6020b3fee">Developer</asp:ListItem>
-                    <asp:ListItem Value="9292080a-931f-493d-80f1-d150079d8b5a">Client</asp:ListItem>
+                    <asp:ListItem Selected="True" Value="Developer">Developer</asp:ListItem>
+                    <asp:ListItem Value="Client">Client</asp:ListItem>
                 </asp:RadioButtonList>
                 <br />
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Create User" CssClass="btn btn-default" />

@@ -37,7 +37,7 @@ namespace INSTaskTracker.Admin
             // Add project to DB.
             AddProjects projects = new AddProjects();
             string userName = ProjectUser.SelectedValue;
-            var _db = new INSTaskTracker.Models.ProjectAssignmentContext();
+            var _db = new UserContext();
             var myUser = (from c in _db.AspNetUsers
                         where c.UserName == userName
                         select c).FirstOrDefault();
@@ -91,12 +91,19 @@ namespace INSTaskTracker.Admin
             var query = clients.Where(p => p.Roles.Any(r => r.RoleId == "9292080a-931f-493d-80f1-d150079d8b5a"));
             return query;
         }*/
-        public IQueryable GetClients()
+        /*public IQueryable GetClients()
         {
             var _db = new INSTaskTracker.Models.ProjectAssignmentContext();
             IQueryable<ApplicationUser> query = _db.AspNetUsers;
             return query;
-        }
+        }*/
 
+        public IQueryable GetClients()
+        {
+            var _db = new UserContext();
+            IQueryable<ApplicationUser> query = _db.AspNetUsers;
+            query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains("f7b4f6a1-5bcf-4f82-ab9d-2d78167a51b6"));
+            return query;
+        }
     }
 }
