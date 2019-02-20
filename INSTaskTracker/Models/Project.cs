@@ -28,6 +28,11 @@ namespace INSTaskTracker.Models
         public string StartDate { get; set; }
         [StringLength(100), Display(Name = "End Date")]
         public string EndDate { get; set; }
+
+
         public virtual ICollection<Assignment> Assignments { get; set; }
+
+        [ForeignKey("Devid ")]
+        public virtual ICollection<Developer> Developers { get; set; }
     }
 }

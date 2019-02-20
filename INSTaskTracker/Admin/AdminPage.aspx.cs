@@ -102,7 +102,7 @@ namespace INSTaskTracker.Admin
         {
             var _db = new UserContext();
             IQueryable<ApplicationUser> query = _db.AspNetUsers;
-            query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains("f7b4f6a1-5bcf-4f82-ab9d-2d78167a51b6"));
+            //query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains("f7b4f6a1-5bcf-4f82-ab9d-2d78167a51b6"));
             return query;
         }
     }

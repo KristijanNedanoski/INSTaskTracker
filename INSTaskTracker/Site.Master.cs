@@ -7,11 +7,17 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using System.Linq;
+using INSTaskTracker.Models;
+
 
 namespace INSTaskTracker
 {
     public partial class SiteMaster : MasterPage
     {
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor registerLink;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminLink;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
