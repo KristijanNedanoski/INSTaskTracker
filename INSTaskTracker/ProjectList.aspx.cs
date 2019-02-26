@@ -18,8 +18,9 @@ namespace INSTaskTracker
 
         public IQueryable<Project> GetProjects()
         {
-            var _db = new ProjectAssignmentContext();
+            var _db = new ApplicationDbContext();
             IQueryable<Project> query = _db.Projects;
+            IQueryable<Assignment> assignments = _db.Assignments;
             if (HttpContext.Current.User.IsInRole("Administrator"))
             {
                 return query;
@@ -27,6 +28,8 @@ namespace INSTaskTracker
             else if (HttpContext.Current.User.IsInRole("Developer"))
             {
                 //Filtering projects for developers
+                assignments = assignments.Where(x => x.UserID == HttpContext.Current.User.Identity.GetUserId());
+                query = query.Where(p => assignments.Contains(p.Assignments.First()));
                 return query;
             }
             else

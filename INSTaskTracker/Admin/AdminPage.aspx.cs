@@ -36,15 +36,21 @@ namespace INSTaskTracker.Admin
         {
             // Add project to DB.
             AddProjects projects = new AddProjects();
-            string userName = ProjectUser.SelectedValue;
-            var _db = new UserContext();
-            var myUser = (from c in _db.AspNetUsers
-                        where c.UserName == userName
-                        select c).FirstOrDefault();
-            bool addSuccess = projects.AddProject(AddProjectName.Text, AddProjectETime.Text,
-            AddProjectDescription.Text, AddProjectSDate.Text, myUser.Id);
+            string userName = AddProjectClient.Text;
+            bool addSuccess = true;
+            var _db = new ApplicationDbContext();
+            var myUser = (from c in _db.Users
+                                      where c.UserName == userName
+                                      select c).FirstOrDefault();
+            if (myUser == null)
+            {
+                addSuccess = false;
+            }
+            
             if (addSuccess)
             {
+                projects.AddProject(AddProjectName.Text, AddProjectEstimatedTime.Text,
+                AddProjectDescription.Text, AddProjectStartDate.Text, myUser.Id);
                 // Reload the page.
                 string pageUrl = Request.Url.AbsoluteUri.Substring(0,
                 Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
@@ -57,13 +63,13 @@ namespace INSTaskTracker.Admin
         }
         public IQueryable GetProjects()
         {
-            var _db = new INSTaskTracker.Models.ProjectAssignmentContext();
+            var _db = new INSTaskTracker.Models.ApplicationDbContext();
             IQueryable query = _db.Projects;
             return query;
         }
         protected void RemoveProjectButton_Click(object sender, EventArgs e)
         {
-            using (var _db = new INSTaskTracker.Models.ProjectAssignmentContext())
+            using (var _db = new INSTaskTracker.Models.ApplicationDbContext())
             {
                 string projectName = DropDownRemoveProject.SelectedValue;
                 var myItem = (from c in _db.Projects
@@ -87,23 +93,22 @@ namespace INSTaskTracker.Admin
         /*public IQueryable GetClients()
         {
             var _db = new INSTaskTracker.Models.ProjectAssignmentContext();
-            IQueryable<ApplicationUser> clients = _db.AspNetUsers;
-            var query = clients.Where(p => p.Roles.Any(r => r.RoleId == "9292080a-931f-493d-80f1-d150079d8b5a"));
-            return query;
-        }*/
-        /*public IQueryable GetClients()
-        {
-            var _db = new INSTaskTracker.Models.ProjectAssignmentContext();
             IQueryable<ApplicationUser> query = _db.AspNetUsers;
             return query;
         }*/
 
-        public IQueryable GetClients()
-        {
-            var _db = new UserContext();
-            IQueryable<ApplicationUser> query = _db.AspNetUsers;
-            //query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains("f7b4f6a1-5bcf-4f82-ab9d-2d78167a51b6"));
-            return query;
-        }
+        /* public IQueryable GetClients()
+         {
+             var _db = new UserContext();
+             IQueryable<ApplicationUser> query = _db.AspNetUsers;
+             //query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains("f7b4f6a1-5bcf-4f82-ab9d-2d78167a51b6"));
+             return query;
+         }
+         <asp:DropDownList ID="ProjectUser" runat="server"
+                     SelectMethod="GetClients" AppendDataBoundItems="true"
+                     DataTextField="UserName" DataValueField="Id">
+                 </asp:DropDownList>
+
+          */
     }
 }

@@ -369,7 +369,6 @@
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\ProjectAssignmentContext.cs" />
     <Compile Include="Models\ProjectAssignmentDatabaseInitializer.cs" />
-    <Compile Include="Models\UserContext.cs" />
     <Compile Include="ProjectDetails.aspx.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

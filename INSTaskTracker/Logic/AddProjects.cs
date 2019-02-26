@@ -16,13 +16,13 @@ namespace INSTaskTracker.Logic
     {
         public bool AddProject(string PName, string eTime, string Des, string sDate, string User)
         {
-            var myProject = new Project();
+            var myProject = new Models.Project();
             myProject.ProjectName = PName;
             myProject.ETime = Convert.ToInt32(eTime);
             myProject.Description = Des;
             myProject.UserID = User;
             myProject.StartDate = sDate;
-            using (ProjectAssignmentContext _db = new ProjectAssignmentContext())
+            using (ApplicationDbContext _db = new ApplicationDbContext())
             {
                 // Add file to DB.
                 _db.Projects.Add(myProject);

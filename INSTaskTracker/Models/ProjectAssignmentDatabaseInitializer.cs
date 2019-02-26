@@ -6,9 +6,9 @@ using System.Data.Entity;
 
 namespace INSTaskTracker.Models
 {
-    public class ProjectAssignmentDatabaseInitializer : DropCreateDatabaseIfModelChanges<ProjectAssignmentContext>
+    public class ProjectAssignmentDatabaseInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
-        protected override void Seed(ProjectAssignmentContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
             GetProjects().ForEach(c => context.Projects.Add(c));
             GetAssignments().ForEach(p => context.Assignments.Add(p));

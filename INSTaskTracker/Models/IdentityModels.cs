@@ -34,9 +34,12 @@ namespace INSTaskTracker.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("INSTaskTracker", throwIfV1Schema: false)
         {
         }
+        public override IDbSet<ApplicationUser> Users { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Assignment> Assignments { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

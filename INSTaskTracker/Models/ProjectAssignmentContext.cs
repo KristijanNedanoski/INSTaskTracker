@@ -12,7 +12,6 @@ namespace INSTaskTracker.Models
         public ProjectAssignmentContext() : base("INSTaskTracker")
         {
         }
-        public DbSet<Project> Projects { get; set; }
-        public DbSet<Assignment> Assignments { get; set; }
+        
     }
 }

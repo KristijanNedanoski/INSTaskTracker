@@ -58,10 +58,11 @@
             <td>
                 <asp:Label ID="Label1" runat="server">Client:</asp:Label></td>
             <td>
-                <asp:DropDownList ID="ProjectUser" runat="server"
-                    SelectMethod="GetClients" AppendDataBoundItems="true"
-                    DataTextField="UserName" DataValueField="Id">
-                </asp:DropDownList>
+                <asp:TextBox ID="AddProjectClient" runat="server" Width="180px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5"
+                    runat="server" Text="* Client user name required."
+                    ControlToValidate="AddProjectClient" SetFocusOnError="true"
+                    Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>

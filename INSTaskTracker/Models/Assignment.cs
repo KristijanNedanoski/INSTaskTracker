@@ -16,7 +16,7 @@ namespace INSTaskTracker.Models
         [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ProjectID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid UserID { get; set; }
+        public string UserID { get; set; }
         [Required, StringLength(100), Display(Name = "Assignment Name")]
         public string AssignmentName { get; set; }
         [StringLength(10000), Display(Name = "Description"),

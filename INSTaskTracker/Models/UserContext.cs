@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using INSTaskTracker;
 
-namespace INSTaskTracker.Models
+namespace INSTaskTracker
 {
     public class UserContext : DbContext
     {
