@@ -9,7 +9,6 @@ namespace INSTaskTracker.Models
 {
     public class Developer : ApplicationUser
     {
-        [ForeignKey("Projid ")]
         public virtual ICollection<Project> Projects { get; set; }
     }
 

@@ -8,7 +8,7 @@
                 <h2><%: Page.Title %></h2>
             </hgroup>
             <asp:ListView ID="projectList" runat="server"
-                DataKeyNames="ProductID" GroupItemCount="4"
+                DataKeyNames="ProjectID" GroupItemCount="4"
                 ItemType="INSTaskTracker.Models.Project" SelectMethod="GetProjects">
                 <EmptyDataTemplate>
                     <table>
@@ -31,14 +31,14 @@
                             <tr>
                                 <td>
                                     <a
-                                        href="ProductDetails.aspx?productID=<%#:Item.ProjectID%>">
+                                        href="ProjectDetails.aspx?projectID=<%#:Item.ProjectID%>">
                                         </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <a
-                                        href="ProductDetails.aspx?productID=<%#:Item.ProjectID%>">
+                                        href="ProjectDetails.aspx?projectID=<%#:Item.ProjectID%>">
                                         <span>
                                             <%#:Item.ProjectName%>
                                         </span>

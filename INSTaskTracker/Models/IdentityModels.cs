@@ -37,7 +37,7 @@ namespace INSTaskTracker.Models
             : base("INSTaskTracker", throwIfV1Schema: false)
         {
         }
-        public override IDbSet<ApplicationUser> Users { get; set; }
+        /*public override IDbSet<ApplicationUser> Users { get; set; }*/
         public DbSet<Project> Projects { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
         public static ApplicationDbContext Create()

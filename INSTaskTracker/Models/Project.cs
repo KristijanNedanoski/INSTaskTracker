@@ -13,7 +13,7 @@ namespace INSTaskTracker.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ProjectID { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
         public string UserID { get; set; }
         [Required, StringLength(100), Display(Name = "Project Name")]
         public string ProjectName { get; set; }
@@ -30,9 +30,7 @@ namespace INSTaskTracker.Models
         public string EndDate { get; set; }
 
 
-        public virtual ICollection<Assignment> Assignments { get; set; }
-
-        [ForeignKey("Devid ")]
+        public virtual ICollection<Assignment> Assignments { get; set; }     
         public virtual ICollection<Developer> Developers { get; set; }
     }
 }

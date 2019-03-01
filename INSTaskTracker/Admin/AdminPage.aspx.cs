@@ -22,12 +22,12 @@ namespace INSTaskTracker.Admin
         protected global::System.Web.UI.WebControls.DropDownList ProjectUser;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string productAction = Request.QueryString["ProductAction"];
-            if (productAction == "add")
+            string projectAction = Request.QueryString["ProjectAction"];
+            if (projectAction == "add")
             {
                 LabelAddStatus.Text = "Project added!";
             }
-            if (productAction == "remove")
+            if (projectAction == "remove")
             {
                 LabelRemoveStatus.Text = "Project removed!";
             }
@@ -67,7 +67,7 @@ namespace INSTaskTracker.Admin
             IQueryable query = _db.Projects;
             return query;
         }
-        protected void RemoveProjectButton_Click(object sender, EventArgs e)
+        /*protected void RemoveProjectButton_Click(object sender, EventArgs e)
         {
             using (var _db = new INSTaskTracker.Models.ApplicationDbContext())
             {
@@ -89,7 +89,7 @@ namespace INSTaskTracker.Admin
                     LabelRemoveStatus.Text = "Unable to locate project.";
                 }
             }
-        }
+        }*/
         /*public IQueryable GetClients()
         {
             var _db = new INSTaskTracker.Models.ProjectAssignmentContext();
