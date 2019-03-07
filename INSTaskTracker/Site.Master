@@ -59,7 +59,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav">
-                                <li><a runat="server" visible="true" href="~/ProjectList.aspx">Projects</a></li> 
+                                <li><a runat="server" visible="true" href="~/Projects/ProjectList.aspx">Projects</a></li> 
                                 </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
