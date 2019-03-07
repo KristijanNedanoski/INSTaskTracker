@@ -42,6 +42,7 @@
                 <asp:RadioButtonList ID="RadioButtonList1" runat="server">
                     <asp:ListItem Selected="True" Value="Developer">Developer</asp:ListItem>
                     <asp:ListItem Value="Client">Client</asp:ListItem>
+                    <asp:ListItem Value="Administrator">Administrator</asp:ListItem>
                 </asp:RadioButtonList>
                 <br />
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Create User" CssClass="btn btn-default" />

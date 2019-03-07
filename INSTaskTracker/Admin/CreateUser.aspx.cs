@@ -26,9 +26,13 @@ namespace INSTaskTracker.Account
                 {
                     userMgr.AddToRole(user.Id, "Developer");
                 }
-                else
+                else if (RadioButtonList1.SelectedValue == "Client")
                 {
                     userMgr.AddToRole(user.Id, "Client");
+                }
+                else
+                {
+                    userMgr.AddToRole(user.Id, "Administrator");
                 }
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 //string code = manager.GenerateEmailConfirmationToken(user.Id);
