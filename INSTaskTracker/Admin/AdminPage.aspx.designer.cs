@@ -112,13 +112,13 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// AddProjectClient control.
+        /// ProjectClient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddProjectClient;
+        protected global::System.Web.UI.WebControls.DropDownList ProjectClient;
         
         /// <summary>
         /// RequiredFieldValidator5 control.

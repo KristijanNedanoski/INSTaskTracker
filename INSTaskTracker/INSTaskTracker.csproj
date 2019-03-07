@@ -174,10 +174,6 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\AdminPage.aspx" />
-    <Content Include="App_Data\INSTaskTracker.mdf" />
-    <Content Include="App_Data\INSTaskTracker_log.ldf">
-      <DependentUpon>INSTaskTracker.mdf</DependentUpon>
-    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -401,6 +397,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Projects\Tasks\" />
   </ItemGroup>
   <ItemGroup>

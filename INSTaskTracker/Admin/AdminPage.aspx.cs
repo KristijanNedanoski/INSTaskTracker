@@ -36,12 +36,12 @@ namespace INSTaskTracker.Admin
         {
             // Add project to DB.
             AddProjects projects = new AddProjects();
-            string userName = AddProjectClient.Text;
+            string userid = ProjectClient.SelectedValue;
             bool addSuccess = true;
             var _db = new ApplicationDbContext();
             var myUser = (from c in _db.Users
-                                      where c.UserName == userName
-                                      select c).FirstOrDefault();
+                                      where c.Id == userid
+                          select c).FirstOrDefault();
             if (myUser == null)
             {
                 addSuccess = false;
@@ -97,18 +97,12 @@ namespace INSTaskTracker.Admin
             return query;
         }*/
 
-        /* public IQueryable GetClients()
+        public IQueryable GetClients()
          {
-             var _db = new UserContext();
-             IQueryable<ApplicationUser> query = _db.AspNetUsers;
-             //query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains("f7b4f6a1-5bcf-4f82-ab9d-2d78167a51b6"));
+             var _db = new ApplicationDbContext();
+             IQueryable<ApplicationUser> query = _db.Users;
+             query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains("ef4d4911-fca5-4b86-ac5b-b5524ebcfbd0"));
              return query;
          }
-         <asp:DropDownList ID="ProjectUser" runat="server"
-                     SelectMethod="GetClients" AppendDataBoundItems="true"
-                     DataTextField="UserName" DataValueField="Id">
-                 </asp:DropDownList>
-
-          */
     }
 }
