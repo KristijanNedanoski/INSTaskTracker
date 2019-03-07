@@ -67,6 +67,18 @@ namespace INSTaskTracker.Admin
             IQueryable query = _db.Projects;
             return query;
         }
+        public IQueryable GetClients()
+        {
+            var _db = new ApplicationDbContext();
+            IQueryable<ApplicationUser> query = _db.Users;
+            var roles = _db.Roles;
+            var client = (from c in _db.Roles
+                          where c.Name == "Client"
+                          select c).FirstOrDefault();
+            query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains(client.Id));
+            return query;
+        }
+        
         /*protected void RemoveProjectButton_Click(object sender, EventArgs e)
         {
             using (var _db = new INSTaskTracker.Models.ApplicationDbContext())
@@ -96,13 +108,5 @@ namespace INSTaskTracker.Admin
             IQueryable<ApplicationUser> query = _db.AspNetUsers;
             return query;
         }*/
-
-        public IQueryable GetClients()
-         {
-             var _db = new ApplicationDbContext();
-             IQueryable<ApplicationUser> query = _db.Users;
-             query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains("ef4d4911-fca5-4b86-ac5b-b5524ebcfbd0"));
-             return query;
-         }
     }
 }

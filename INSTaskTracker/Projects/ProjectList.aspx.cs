@@ -42,5 +42,15 @@ namespace INSTaskTracker
                 return query;
             }
         }
+
+        public string GetClientName(string clientid)
+        {
+            var _db = new ApplicationDbContext();
+            IQueryable<ApplicationUser> query = _db.Users;
+            ApplicationUser myUser = (from c in _db.Users
+                                      where c.Id == clientid
+                                      select c).FirstOrDefault();
+            return myUser.UserName;
+        }
     }
 }

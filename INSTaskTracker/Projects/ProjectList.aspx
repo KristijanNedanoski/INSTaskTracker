@@ -45,7 +45,15 @@
                                     </a>
                                     <br />
                                     <span>
-                                        <b>Price: </b><%#:String.Format("{0:c}", Item.ETime)%>
+                                        <b>Start date: </b><%#:Item.StartDate%>
+                                    </span>
+                                    <br />
+                                    <span>
+                                        <b>Estimated time: </b><%#:Item.ETime%>
+                                    </span>
+                                    <br />
+                                    <span>
+                                       <b>Client: </b> <%#:GetClientName(Item.UserID) %>
                                     </span>
                                     <br />
                                 </td>
