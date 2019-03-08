@@ -20,14 +20,13 @@ namespace INSTaskTracker.Models
         [Required, Display(Name = "Estimate Time")]
         public int ETime { get; set; }
         [Display(Name = "Real Time")]
-        public int RTime { get; set; }
+        public int? RTime { get; set; }
         [StringLength(10000), Display(Name = "Description"),
         DataType(DataType.MultilineText)]
         public string Description { get; set; }
-        [Required, StringLength(100), Display(Name = "Start Date")]
-        public string StartDate { get; set; }
-        [StringLength(100), Display(Name = "End Date")]
-        public string EndDate { get; set; }
+        [Required]
+        public DateTime StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
 
         public virtual ICollection<Assignment> Assignments { get; set; }     

@@ -22,6 +22,15 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.Label LabelAddName;
         
         /// <summary>
+        /// AddProjectName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddProjectName;
+        
+        /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
+        /// LabelAddProjectStartDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAddProjectStartDate;
+        
+        /// <summary>
         /// LabelAddDescription control.
         /// </summary>
         /// <remarks>
@@ -92,6 +110,15 @@ namespace INSTaskTracker.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelAddDescription;
+        
+        /// <summary>
+        /// AddProjectDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddProjectDescription;
         
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -137,5 +164,14 @@ namespace INSTaskTracker.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddProjectButton;
+        
+        /// <summary>
+        /// LabelAddStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAddStatus;
     }
 }
