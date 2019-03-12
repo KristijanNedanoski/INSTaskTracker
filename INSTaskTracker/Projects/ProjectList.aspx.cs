@@ -24,6 +24,7 @@ namespace INSTaskTracker
             string user;
             if (HttpContext.Current.User.IsInRole("Administrator"))
             {
+                query = query.Where(p => p.IsFinished == false);
                 return query;
             }
             else if (HttpContext.Current.User.IsInRole("Developer"))
@@ -32,6 +33,7 @@ namespace INSTaskTracker
                 user = HttpContext.Current.User.Identity.GetUserId();
                 assignments = assignments.Where(x => x.UserID == user);
                 query = query.Where(p => assignments.Contains(p.Assignments.FirstOrDefault()));
+                query = query.Where(p => p.IsFinished == false);
                 return query;
             }
             else
@@ -39,6 +41,7 @@ namespace INSTaskTracker
                 //Filtering projects for clients
                 user = HttpContext.Current.User.Identity.GetUserId();
                 query = query.Where(p => p.UserID == user);
+                query = query.Where(p => p.IsFinished == false);
                 return query;
             }
         }

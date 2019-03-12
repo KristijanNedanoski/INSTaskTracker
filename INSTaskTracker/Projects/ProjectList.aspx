@@ -45,11 +45,11 @@
                                     </a>
                                     <br />
                                     <span>
-                                        <b>Start date: </b><%#:Item.StartDate%>
+                                        <b>Start date: </b><%#:Item.StartDate.ToShortDateString()%>
                                     </span>
                                     <br />
                                     <span>
-                                        <b>Estimated time: </b><%#:Item.ETime%>
+                                        <b>Estimated time: </b><%#:Item.ETime%> days.
                                     </span>
                                     <br />
                                     <span>

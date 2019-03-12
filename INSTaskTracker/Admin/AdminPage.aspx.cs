@@ -1,11 +1,11 @@
-﻿using INSTaskTracker.Logic;
-using INSTaskTracker.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using INSTaskTracker.Logic;
+using INSTaskTracker.Models;
 
 namespace INSTaskTracker.Admin
 {
@@ -20,7 +20,7 @@ namespace INSTaskTracker.Admin
             }
             if (projectAction == "remove")
             {
-                LabelAddStatus.Text = "Project removed!";
+                //LabelAddStatus.Text = "Project removed!";
             }
         }
         protected void AddProjectButton_Click(object sender, EventArgs e)
@@ -69,5 +69,28 @@ namespace INSTaskTracker.Admin
             query = query.Where(p => p.Roles.Select(y => y.RoleId).Contains(client.Id));
             return query;
         }
+        /*protected void RemoveProjectButton_Click(object sender, EventArgs e)
+        {
+            using (var _db = new INSTaskTracker.Models.ApplicationDbContext())
+            {
+                string projectName = DropDownRemoveProject.SelectedValue;
+                var myItem = (from c in _db.Projects
+                              where c.ProjectName == projectName
+                              select c).FirstOrDefault();
+                if (myItem != null)
+                {
+                    _db.Projects.Remove(myItem);
+                    _db.SaveChanges();
+                    // Reload the page.
+                    string pageUrl = Request.Url.AbsoluteUri.Substring(0,
+                    Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
+                    Response.Redirect(pageUrl + "?ProductAction=remove");
+                }
+                else
+                {
+                    LabelRemoveStatus.Text = "Unable to locate project.";
+                }
+            }
+        }*/
     }
 }

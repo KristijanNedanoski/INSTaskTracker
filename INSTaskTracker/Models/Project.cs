@@ -27,6 +27,7 @@ namespace INSTaskTracker.Models
         [Required]
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+        public bool IsFinished { get; set; }
 
 
         public virtual ICollection<Assignment> Assignments { get; set; }     

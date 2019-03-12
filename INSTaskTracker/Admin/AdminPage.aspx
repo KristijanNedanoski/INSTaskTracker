@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <h1>Administration</h1>
     <hr />
-    <h3>Add File:</h3>
+    <h3>Add Project:</h3>
     <table>
         <tr>
             <td>
@@ -19,7 +19,7 @@
         <tr>
             <td>
                 <asp:Label ID="LabelAddEstimatedTime"
-                    runat="server">Estimated Time:</asp:Label></td>
+                    runat="server">Estimated Time (in days):</asp:Label></td>
             <td style="width: 1018px" class="modal-lg">
                 <asp:TextBox ID="AddProjectEstimatedTime" runat="server" Width="180px" TextMode="Number"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
