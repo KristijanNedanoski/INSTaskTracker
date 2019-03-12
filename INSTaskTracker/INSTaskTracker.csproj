@@ -194,6 +194,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <Content Include="Admin\Web.config" />
+    <Content Include="Projects\FinishedProjectList.aspx" />
     <Content Include="Projects\Web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Projects\ProjectDetails.aspx" />
@@ -365,6 +366,13 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\ProjectAssignmentDatabaseInitializer.cs" />
+    <Compile Include="Projects\FinishedProjectList.aspx.cs">
+      <DependentUpon>FinishedProjectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projects\FinishedProjectList.aspx.designer.cs">
+      <DependentUpon>FinishedProjectList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Projects\ProjectDetails.aspx.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
