@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -16,7 +16,18 @@ namespace INSTaskTracker.Projects
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            using (var _db = new INSTaskTracker.Models.ApplicationDbContext())
+            {
+                Guid projectid = Guid.Parse(Request.QueryString["projectID"]);
+                var myproject = (from c in _db.Projects
+                                 where c.ProjectID == projectid
+                                 select c).FirstOrDefault();
+                if (myproject.IsFinished == true)
+                {
+                    var span = this.FindControl("enddate");
+                    span.Visible = true;
+                }
+            }
         }
         public IQueryable<Models.Project> GetProject([QueryString("projectID")] Guid? projectId)
         {

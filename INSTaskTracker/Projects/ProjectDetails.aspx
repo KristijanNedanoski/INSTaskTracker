@@ -17,17 +17,22 @@
                     </span>
                     <br />
                     <span>
+                        <b>Client: </b><%#:GetClientName(Item.UserID) %>
+                    </span>
+                    <br />
+                    <span>
                         <b>Start date: </b><%#:Item.StartDate.ToShortDateString()%>
                     </span>
                     <br />
+                    <span id="enddate" hidden>
+                        <b>End date: </b><%#: Item.EndDate%>
+                    </span>
                     <span>
                         <b>Estimated time: </b><%#:Item.ETime%> days.
                     </span>
                     <br />
-                    <span>
-                        <b>Client: </b><%#:GetClientName(Item.UserID) %>
-                    </span>
-                    <br />
+                    
+
                 </td>
             </table>
         </ItemTemplate>
