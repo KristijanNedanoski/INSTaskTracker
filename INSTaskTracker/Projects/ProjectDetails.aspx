@@ -24,9 +24,10 @@
                         <b>Start date: </b><%#:Item.StartDate.ToShortDateString()%>
                     </span>
                     <br />
-                    <span id="enddate" hidden>
-                        <b>End date: </b><%#: Item.EndDate%>
+                    <span>
+                        <b>End date: </b><%#: Item.EndDate == null ? "in progress" : Item.EndDate.Value.ToShortDateString()%>
                     </span>
+                    <br />
                     <span>
                         <b>Estimated time: </b><%#:Item.ETime%> days.
                     </span>

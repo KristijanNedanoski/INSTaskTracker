@@ -14,21 +14,21 @@ namespace INSTaskTracker.Logic
 {
     public class AddAssignments
     {
-        public bool AddAssignment(string AName, string eTime, string Des, DateTime sDate, string User)
+        public bool AddTask(string AName, string eTime, string Des, DateTime sDate, Guid project)
         {
-            var myProject = new Models.Project
+            var myAssignment = new Models.Assignment
             {
-                ProjectName = AName,
+                AssignmentName = AName,
                 ETime = Convert.ToInt32(eTime),
                 Description = Des,
-                UserID = User,
+                ProjectID = project,
                 StartDate = sDate.Date,
                 IsFinished = false
             };
             using (ApplicationDbContext _db = new ApplicationDbContext())
             {
                 // Add assignments to DB.
-                _db.Projects.Add(myProject);
+                _db.Assignments.Add(myAssignment);
                 try
                 {
                     _db.SaveChanges();

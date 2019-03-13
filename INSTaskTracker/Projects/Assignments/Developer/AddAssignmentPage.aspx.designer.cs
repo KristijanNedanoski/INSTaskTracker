@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace INSTaskTracker.Admin {
+namespace INSTaskTracker.Projects.Assignments.Developer {
     
     
-    public partial class AdminPage {
+    public partial class AddAssignmentPage {
         
         /// <summary>
         /// LabelAddName control.
@@ -22,13 +22,13 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.Label LabelAddName;
         
         /// <summary>
-        /// AddProjectName control.
+        /// AddAssignmentName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddProjectName;
+        protected global::System.Web.UI.WebControls.TextBox AddAssignmentName;
         
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -49,13 +49,13 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.Label LabelAddEstimatedTime;
         
         /// <summary>
-        /// AddProjectEstimatedTime control.
+        /// AddAssignmentEstimatedTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddProjectEstimatedTime;
+        protected global::System.Web.UI.WebControls.TextBox AddAssignmentEstimatedTime;
         
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -76,13 +76,13 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.Label LabelAddStartDate;
         
         /// <summary>
-        /// AddProjectStartDate control.
+        /// AddAssignmentStartDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddProjectStartDate;
+        protected global::System.Web.UI.WebControls.TextBox AddAssignmentStartDate;
         
         /// <summary>
         /// RequiredFieldValidator4 control.
@@ -94,13 +94,13 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// LabelAddProjectStartDate control.
+        /// LabelAddAssignmentStartDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAddProjectStartDate;
+        protected global::System.Web.UI.WebControls.Label LabelAddAssignmentStartDate;
         
         /// <summary>
         /// LabelAddDescription control.
@@ -112,13 +112,13 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.Label LabelAddDescription;
         
         /// <summary>
-        /// AddProjectDescription control.
+        /// AddAssignmentDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddProjectDescription;
+        protected global::System.Web.UI.WebControls.TextBox AddAssignmentDescription;
         
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -139,13 +139,13 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// ProjectClient control.
+        /// Project control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ProjectClient;
+        protected global::System.Web.UI.WebControls.DropDownList Project;
         
         /// <summary>
         /// RequiredFieldValidator5 control.
@@ -157,13 +157,13 @@ namespace INSTaskTracker.Admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
-        /// AddProjectButton control.
+        /// AddAssignmentButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddProjectButton;
+        protected global::System.Web.UI.WebControls.Button AddAssignmentButton;
         
         /// <summary>
         /// LabelAddStatus control.

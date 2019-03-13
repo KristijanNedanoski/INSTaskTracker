@@ -15,7 +15,6 @@ namespace INSTaskTracker.Models
         public Guid AssignmentID { get; set; }
         [Required]
         public Guid ProjectID { get; set; }
-        [Required]
         public string UserID { get; set; }
         [Required, StringLength(100), Display(Name = "Assignment Name")]
         public string AssignmentName { get; set; }
@@ -25,7 +24,10 @@ namespace INSTaskTracker.Models
         [Required, Display(Name = "Estimated Time")]
         public int ETime { get; set; }
         [Display(Name = "Real Time")]
-        public int RTime { get; set; }
+        public int? RTime { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+        public bool IsFinished { get; set; }
         [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Priority { get; set; }
     }
