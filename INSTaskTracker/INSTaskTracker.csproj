@@ -174,6 +174,10 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="App_Data\INSTaskTracker.mdf" />
+    <Content Include="App_Data\INSTaskTracker_log.ldf">
+      <DependentUpon>INSTaskTracker.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -195,12 +199,12 @@
     <Content Include="Account\Web.config" />
     <Content Include="Admin\Web.config" />
     <Content Include="Projects\FinishedProjectList.aspx" />
+    <Content Include="Projects\ProjectDetails.aspx" />
     <Content Include="Projects\Web.config" />
     <Content Include="Projects\Assignments\Administrator\Web.config" />
     <Content Include="Projects\Assignments\Web.config" />
     <Content Include="Projects\Assignments\Developer\Web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Projects\ProjectDetails.aspx" />
     <Content Include="Projects\ProjectList.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -409,7 +413,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Projects\Tasks\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
