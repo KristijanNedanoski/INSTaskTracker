@@ -196,6 +196,9 @@
     <Content Include="Admin\Web.config" />
     <Content Include="Projects\FinishedProjectList.aspx" />
     <Content Include="Projects\Web.config" />
+    <Content Include="Projects\Assignments\Administrator\Web.config" />
+    <Content Include="Projects\Assignments\Web.config" />
+    <Content Include="Projects\Assignments\Developer\Web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Projects\ProjectDetails.aspx" />
     <Content Include="Projects\ProjectList.aspx" />
@@ -359,6 +362,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AddAssignments.cs" />
     <Compile Include="Logic\AddProjects.cs" />
     <Compile Include="Logic\RoleActions.cs" />
     <Compile Include="Models\Assignment.cs" />
@@ -406,7 +410,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Projects\Tasks\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

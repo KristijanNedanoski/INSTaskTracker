@@ -26,5 +26,7 @@ namespace INSTaskTracker.Models
         public int ETime { get; set; }
         [Display(Name = "Real Time")]
         public int RTime { get; set; }
+        [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Priority { get; set; }
     }
 }

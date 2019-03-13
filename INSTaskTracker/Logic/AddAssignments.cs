@@ -12,13 +12,13 @@ using System.Data.Entity.Validation;
 
 namespace INSTaskTracker.Logic
 {
-    public class AddProjects
+    public class AddAssignments
     {
-        public bool AddProject(string PName, string eTime, string Des, DateTime sDate, string User)
+        public bool AddAssignment(string AName, string eTime, string Des, DateTime sDate, string User)
         {
             var myProject = new Models.Project
             {
-                ProjectName = PName,
+                ProjectName = AName,
                 ETime = Convert.ToInt32(eTime),
                 Description = Des,
                 UserID = User,
@@ -27,7 +27,7 @@ namespace INSTaskTracker.Logic
             };
             using (ApplicationDbContext _db = new ApplicationDbContext())
             {
-                // Add project to DB.
+                // Add assignments to DB.
                 _db.Projects.Add(myProject);
                 try
                 {
@@ -38,8 +38,9 @@ namespace INSTaskTracker.Logic
                     Console.WriteLine(e);
                 }
             }
-            // Success.
-            return true;
+                // Success.
+                return true;
         }
+        
     }
 }

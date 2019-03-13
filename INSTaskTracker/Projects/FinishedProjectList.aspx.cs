@@ -16,7 +16,7 @@ namespace INSTaskTracker
 
         }
 
-        public IQueryable<Project> GetProjectsE()
+        public IQueryable<Project> GetFinishedProjects()
         {
             var _db = new ApplicationDbContext();
             IQueryable<Project> query = _db.Projects;
