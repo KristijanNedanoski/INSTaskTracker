@@ -32,6 +32,10 @@
                         <b>Estimated time: </b><%#:Item.ETime%> days.
                     </span>
                     <br />
+                    <span>
+                        <a href="Tasks/Developer/AddAssignmentPage.aspx">Add Task</a>
+                    </span>
+                    <br />
                     
 
                 </td>
