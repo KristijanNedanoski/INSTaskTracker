@@ -29,7 +29,7 @@ namespace INSTaskTracker.Projects.Assignments.Developer
             {
                 // Add assignment to DB.
                 AddAssignments assignments = new AddAssignments();
-                Guid projectid = Guid.Parse(Project.SelectedValue);
+                Guid projectid = Guid.Parse(Request.QueryString["projectID"]);
                 DateTime startDate; // = Convert.ToDateTime(AddProjectStartDate.Text);
                 var dateParseResult = DateTime.TryParse(AddAssignmentStartDate.Text, out startDate);
                 // if (!dateParseResult) throw new Exception("Kristijan");
@@ -53,13 +53,13 @@ namespace INSTaskTracker.Projects.Assignments.Developer
             }
         }
 
-        public IQueryable GetProjects()
+        /*public IQueryable GetProjects()
         {
             var _db = new INSTaskTracker.Models.ApplicationDbContext();
             IQueryable query = _db.Projects;
             return query;
         }
-        /*public IQueryable GetClients()
+        public IQueryable GetClients()
          {
               var _db = new ApplicationDbContext();
               IQueryable<ApplicationUser> query = _db.Users;

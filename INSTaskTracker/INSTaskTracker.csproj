@@ -194,13 +194,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <Content Include="Admin\Web.config" />
-    <Content Include="Projects\Tasks\Developer\AddAssignmentPage.aspx" />
-    <Content Include="Projects\FinishedProjectList.aspx" />
+    <Content Include="Projects\Assignments\AssignmentList.aspx" />
+    <Content Include="Projects\Assignments\Developer\AddAssignmentPage.aspx" />
     <Content Include="Projects\ProjectDetails.aspx" />
     <Content Include="Projects\Web.config" />
     <Content Include="Projects\Assignments\Administrator\Web.config" />
     <Content Include="Projects\Assignments\Web.config" />
-    <Content Include="Projects\Tasks\Developer\Web.config" />
+    <Content Include="Projects\Assignments\Developer\Web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Projects\ProjectList.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -371,19 +371,19 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\ProjectAssignmentDatabaseInitializer.cs" />
-    <Compile Include="Projects\Tasks\Developer\AddAssignmentPage.aspx.cs">
+    <Compile Include="Projects\Assignments\AssignmentList.aspx.cs">
+      <DependentUpon>AssignmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projects\Assignments\AssignmentList.aspx.designer.cs">
+      <DependentUpon>AssignmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Assignments\Developer\AddAssignmentPage.aspx.cs">
       <DependentUpon>AddAssignmentPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Projects\Tasks\Developer\AddAssignmentPage.aspx.designer.cs">
+    <Compile Include="Projects\Assignments\Developer\AddAssignmentPage.aspx.designer.cs">
       <DependentUpon>AddAssignmentPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Projects\FinishedProjectList.aspx.cs">
-      <DependentUpon>FinishedProjectList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Projects\FinishedProjectList.aspx.designer.cs">
-      <DependentUpon>FinishedProjectList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Projects\ProjectDetails.aspx.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>

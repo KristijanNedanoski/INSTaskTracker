@@ -1,15 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProjectList.aspx.cs" Inherits="INSTaskTracker.ProjectList" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AssignmentList.aspx.cs" Inherits="INSTaskTracker.Projects.Assignments.AssignmentList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-    <section>
+         <section>
         <div>
             <hgroup>
                 <h2><%: Page.Title %></h2>
             </hgroup>
-            <asp:ListView ID="projectList" runat="server"
-                DataKeyNames="ProjectID" GroupItemCount="4"
-                ItemType="INSTaskTracker.Models.Project" SelectMethod="GetFinishedProjects">
+            <asp:ListView ID="assignmentList" runat="server"
+                DataKeyNames="AssignmentID" GroupItemCount="4"
+                ItemType="INSTaskTracker.Models.Assignment" SelectMethod="GetAssignments">
                 <EmptyDataTemplate>
                     <table>
                         <tr>
@@ -31,16 +29,16 @@
                             <tr>
                                 <td>
                                     <a
-                                        href="ProjectDetails.aspx?projectID=<%#:Item.ProjectID%>">
+                                        href="AssignmentDetails.aspx?assignmentID=<%#:Item.AssignmentID%>">
                                         </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <a
-                                        href="ProjectDetails.aspx?projectID=<%#:Item.ProjectID%>">
+                                        href="AssignmentDetails.aspx?assignmentID=<%#:Item.AssignmentID%>">
                                         <span>
-                                            <%#:Item.ProjectName%>
+                                            <%#:Item.AssignmentName%>
                                         </span>
                                     </a>
                                     <br />
@@ -50,10 +48,6 @@
                                     <br />
                                     <span>
                                         <b>Estimated time: </b><%#:Item.ETime%> days.
-                                    </span>
-                                    <br />
-                                    <span>
-                                       <b>Client: </b> <%#:GetClientName(Item.UserID) %>
                                     </span>
                                     <br />
                                 </td>

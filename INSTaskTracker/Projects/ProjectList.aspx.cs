@@ -21,28 +21,54 @@ namespace INSTaskTracker
             var _db = new ApplicationDbContext();
             IQueryable<Project> query = _db.Projects;
             IQueryable<Assignment> assignments = _db.Assignments;
-            string user;
-            if (HttpContext.Current.User.IsInRole("Administrator"))
+            string user = HttpContext.Current.User.Identity.GetUserId();
+            string project = Request.QueryString["projects"];
+            if (project == "Unfinished")
             {
-                query = query.Where(p => p.IsFinished == false);
-                return query;
-            }
-            else if (HttpContext.Current.User.IsInRole("Developer"))
-            {
-                //Filtering projects for developers
-                user = HttpContext.Current.User.Identity.GetUserId();
-                assignments = assignments.Where(x => x.UserID == user);
-                query = query.Where(p => assignments.Contains(p.Assignments.FirstOrDefault()));
-                query = query.Where(p => p.IsFinished == false);
-                return query;
+                if (HttpContext.Current.User.IsInRole("Administrator"))
+                {
+                    query = query.Where(p => p.IsFinished == false);
+                    return query;
+                }
+                else if (HttpContext.Current.User.IsInRole("Developer"))
+                {
+                    //Filtering projects for developers
+                    assignments = assignments.Where(x => x.UserID == user);
+                    query = query.Where(p => assignments.Contains(p.Assignments.FirstOrDefault()));
+                    query = query.Where(p => p.IsFinished == false);
+                    return query;
+                }
+                else
+                {
+                    //Filtering projects for clients
+                    query = query.Where(p => p.UserID == user);
+                    query = query.Where(p => p.IsFinished == false);
+                    return query;
+                }
             }
             else
             {
-                //Filtering projects for clients
-                user = HttpContext.Current.User.Identity.GetUserId();
-                query = query.Where(p => p.UserID == user);
-                query = query.Where(p => p.IsFinished == false);
-                return query;
+                if (HttpContext.Current.User.IsInRole("Administrator"))
+                {
+                    query = query.Where(p => p.IsFinished == true);
+                    return query;
+                }
+                else if (HttpContext.Current.User.IsInRole("Developer"))
+                {
+                    //Filtering projects for developers
+                    assignments = assignments.Where(x => x.UserID == user);
+                    query = query.Where(p => assignments.Contains(p.Assignments.FirstOrDefault()));
+                    query = query.Where(p => p.IsFinished == true);
+                    return query;
+                }
+                else
+                {
+                    //Filtering projects for clients
+                    user = HttpContext.Current.User.Identity.GetUserId();
+                    query = query.Where(p => p.UserID == user);
+                    query = query.Where(p => p.IsFinished == true);
+                    return query;
+                }
             }
         }
 

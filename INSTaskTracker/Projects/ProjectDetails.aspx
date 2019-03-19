@@ -33,7 +33,23 @@
                     </span>
                     <br />
                     <span>
-                        <a href="Tasks/Developer/AddAssignmentPage.aspx">Add Task</a>
+                        <a href="Assignments/Developer/AddAssignmentPage.aspx?projectID=<%#:Item.ProjectID%>">Add Task</a>
+                    </span>
+                    <br />
+                    <span>
+                        <a href="Assignments/AssignmentList.aspx?projectID=<%#:Item.ProjectID%>&list=Mine">View your current assignments</a>
+                    </span>
+                    <br />
+                    <span>
+                        <a href="Assignments/AssignmentList.aspx?projectID=<%#:Item.ProjectID%>&list=Current">View in progress assignments</a>
+                    </span>
+                    <br />
+                    <span>
+                        <a href="Assignments/AssignmentList.aspx?projectID=<%#:Item.ProjectID%>&list=Planned">View planned assignments</a>
+                    </span>
+                    <br />
+                    <span>
+                        <a href="Assignments/AssignmentList.aspx?projectID=<%#:Item.ProjectID%>&list=Finished">View Finished assignments</a>
                     </span>
                     <br />
                     

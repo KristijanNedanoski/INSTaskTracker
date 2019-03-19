@@ -55,20 +55,6 @@
                     Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
-        <tr>
-            <td>
-                <asp:Label ID="Label1" runat="server">Project:</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
-                <asp:DropDownList ID="Project" runat="server"
-                    SelectMethod="GetProjects" AppendDataBoundItems="true"
-                    DataTextField="ProjectName" DataValueField="ProjectID">
-                </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5"
-                    runat="server" Text="* Project name required."
-                    ControlToValidate="Project" SetFocusOnError="true"
-                    Display="Dynamic"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
     </table>
     <p>
         <br>
