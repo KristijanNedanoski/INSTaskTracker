@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AssignmentDetails.aspx.cs" Inherits="INSTaskTracker.Projects.Assignments.AssignmentDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<<<<<<< HEAD
     <asp:FormView ID="assignmentDetail" runat="server"
         ItemType="INSTaskTracker.Models.Assignment" SelectMethod="GetAssignment"
         RenderOuterTable="false">
@@ -37,6 +36,4 @@
             </table>
         </ItemTemplate>
     </asp:FormView>
-=======
->>>>>>> 10dac3dd1b4789e8141fdb58353ede7de36e1cb6
 </asp:Content>

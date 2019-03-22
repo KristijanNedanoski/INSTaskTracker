@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -16,13 +17,14 @@ namespace INSTaskTracker.Projects
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            using (var _db = new INSTaskTracker.Models.ApplicationDbContext())
+            if (HttpContext.Current.User.IsInRole("Client"))
             {
-                if (HttpContext.Current.User.IsInRole("Client"))
-                {
-                    AddTaskLink.Visible = false;
-                    MyAssignmentsLink.Visible = false;
-                }
+                ApplicationDbContext context = new ApplicationDbContext();
+
+                System.Web.UI.Control AddTaskLink = projectDetail.Row.FindControl("AddTaskLink");
+                System.Web.UI.Control MyAssignmentsLink = projectDetail.Row.FindControl("MyAssignmentsLink");
+                AddTaskLink.Visible = false;
+                MyAssignmentsLink.Visible = false;
             }
         }
         public IQueryable<Models.Project> GetProject([QueryString("projectID")] Guid? projectId)

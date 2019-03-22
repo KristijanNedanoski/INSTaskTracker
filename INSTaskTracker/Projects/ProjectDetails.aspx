@@ -32,11 +32,11 @@
                     </span>
                     <br />
                     <span>
-                        <a runat="server" id="AddTaskLink" visible="true" href="Assignments/Developer/AddAssignmentPage.aspx?projectID=<%#:Item.ProjectID%>">Add Task</a>
+                        <asp:HyperLink ID="AddTaskLink" runat="server" NavigateUrl="~/Projects/Assignments/Developer/AddAssignmentPage.aspx?projectID=<%#:Item.ProjectID%>" Visible="true">Add Task</asp:HyperLink>
                     </span>
                     <br />
                     <span>
-                        <a runat="server" id="MyAssignmentsLink" visible="true" href="Assignments/AssignmentList.aspx?projectID=<%#:Item.ProjectID%>&list=Mine">View your current assignments</a>
+                        <asp:HyperLink ID="MyAssignmentsLink" runat="server" NavigateUrl="~/Projects/Assignments/AssignmentList.aspx?projectID=<%#:Item.ProjectID%>&list=Mine" Visible="true">View your current assignments</asp:HyperLink>
                     </span>
                     <br />
                     <span>
