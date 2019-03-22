@@ -8,7 +8,7 @@
             <td>
                 <asp:Label ID="LabelAddName"
                     runat="server">Assignment Name:</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
+            <td style="width: 1018px; height: 40px" class="modal-lg">
                 <asp:TextBox ID="AddAssignmentName" runat="server" Width="180px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
                     runat="server" Text="* Project name required."
@@ -20,7 +20,7 @@
             <td>
                 <asp:Label ID="LabelAddEstimatedTime"
                     runat="server">Estimated Time (in days):</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
+            <td style="width: 1018px; height: 40px" class="modal-lg">
                 <asp:TextBox ID="AddAssignmentEstimatedTime" runat="server" Width="180px" TextMode="Number"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
                     runat="server" Text="* Estimated time required."
@@ -32,21 +32,19 @@
             <td>
                 <asp:Label ID="LabelAddStartDate"
                     runat="server">Start Date:</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
+            <td style="width: 1018px; height: 40px" class="modal-lg">
                 <asp:TextBox ID="AddAssignmentStartDate" runat="server" Width="180px" TextMode="Date"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4"
                     runat="server" Text="* Project start date required."
                     ControlToValidate="AddAssignmentStartDate" SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>
-        &nbsp;<asp:Label ID="LabelAddAssignmentStartDate" runat="server" Text=""></asp:Label>
-
             </td>
         </tr>
         <tr>
             <td>
                 <asp:Label ID="LabelAddDescription"
                     runat="server">Description:</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
+            <td style="width: 1018px; height: 40px" class="modal-lg">
                 <asp:TextBox ID="AddAssignmentDescription"
                     runat="server" Width="180px" Rows="2" TextMode="MultiLine"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2"

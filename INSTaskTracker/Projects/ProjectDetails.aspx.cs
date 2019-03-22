@@ -18,14 +18,10 @@ namespace INSTaskTracker.Projects
         {
             using (var _db = new INSTaskTracker.Models.ApplicationDbContext())
             {
-                Guid projectid = Guid.Parse(Request.QueryString["projectID"]);
-                var myproject = (from c in _db.Projects
-                                 where c.ProjectID == projectid
-                                 select c).FirstOrDefault();
-                if (myproject.IsFinished == true)
+                if (HttpContext.Current.User.IsInRole("Client"))
                 {
-                    var span = this.FindControl("enddate");
-                    span.Visible = true;
+                    AddTaskLink.Visible = false;
+                    MyAssignmentsLink.Visible = false;
                 }
             }
         }

@@ -8,7 +8,7 @@
             <td>
                 <asp:Label ID="LabelAddName"
                     runat="server">Name:</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
+            <td style="width: 1018px; height: 40px" class="modal-lg">
                 <asp:TextBox ID="AddProjectName" runat="server" Width="180px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
                     runat="server" Text="* Project name required."
@@ -20,7 +20,7 @@
             <td>
                 <asp:Label ID="LabelAddStartDate"
                     runat="server">Start Date:</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
+            <td style="width: 1018px; height: 40px" class="modal-lg">
                 <asp:TextBox ID="AddProjectStartDate" runat="server" Width="180px" TextMode="Date"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4"
                     runat="server" Text="* Project start date required."
@@ -34,7 +34,7 @@
             <td>
                 <asp:Label ID="LabelAddDescription"
                     runat="server">Description:</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
+            <td style="width: 1018px; height: 40px" class="modal-lg">
                 <asp:TextBox ID="AddProjectDescription"
                     runat="server" Width="180px" Rows="2" TextMode="MultiLine"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
@@ -46,7 +46,7 @@
         <tr>
             <td>
                 <asp:Label ID="Label1" runat="server">Client:</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
+            <td style="width: 1018px; height: 40px" class="modal-lg">
                 <asp:DropDownList ID="ProjectClient" runat="server"
                     SelectMethod="GetClients" AppendDataBoundItems="true"
                     DataTextField="UserName" DataValueField="Id">

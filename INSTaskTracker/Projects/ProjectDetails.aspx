@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProjectDetails.aspx.cs" Inherits="INSTaskTracker.Projects.ProjectDetails" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:FormView ID="projectDetail" runat="server"
+        <asp:FormView ID="projectDetail" runat="server"
         ItemType="INSTaskTracker.Models.Project" SelectMethod="GetProject"
         RenderOuterTable="false">
         <ItemTemplate>
@@ -33,11 +32,11 @@
                     </span>
                     <br />
                     <span>
-                        <a href="Assignments/Developer/AddAssignmentPage.aspx?projectID=<%#:Item.ProjectID%>">Add Task</a>
+                        <a runat="server" id="AddTaskLink" visible="true" href="Assignments/Developer/AddAssignmentPage.aspx?projectID=<%#:Item.ProjectID%>">Add Task</a>
                     </span>
                     <br />
                     <span>
-                        <a href="Assignments/AssignmentList.aspx?projectID=<%#:Item.ProjectID%>&list=Mine">View your current assignments</a>
+                        <a runat="server" id="MyAssignmentsLink" visible="true" href="Assignments/AssignmentList.aspx?projectID=<%#:Item.ProjectID%>&list=Mine">View your current assignments</a>
                     </span>
                     <br />
                     <span>

@@ -194,6 +194,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <Content Include="Admin\Web.config" />
+    <Content Include="Projects\Assignments\AssignmentDetails.aspx" />
     <Content Include="Projects\Assignments\AssignmentList.aspx" />
     <Content Include="Projects\Assignments\Developer\AddAssignmentPage.aspx" />
     <Content Include="Projects\ProjectDetails.aspx" />
@@ -371,6 +372,13 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\ProjectAssignmentDatabaseInitializer.cs" />
+    <Compile Include="Projects\Assignments\AssignmentDetails.aspx.cs">
+      <DependentUpon>AssignmentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projects\Assignments\AssignmentDetails.aspx.designer.cs">
+      <DependentUpon>AssignmentDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Projects\Assignments\AssignmentList.aspx.cs">
       <DependentUpon>AssignmentList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
