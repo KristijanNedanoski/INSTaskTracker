@@ -18,18 +18,6 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="LabelAddEstimatedTime"
-                    runat="server">Estimated Time (in days):</asp:Label></td>
-            <td style="width: 1018px" class="modal-lg">
-                <asp:TextBox ID="AddProjectEstimatedTime" runat="server" Width="180px" TextMode="Number"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
-                    runat="server" Text="* Estimated time required."
-                    ControlToValidate="AddProjectEstimatedTime" SetFocusOnError="true"
-                    Display="Dynamic"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <asp:Label ID="LabelAddStartDate"
                     runat="server">Start Date:</asp:Label></td>
             <td style="width: 1018px" class="modal-lg">

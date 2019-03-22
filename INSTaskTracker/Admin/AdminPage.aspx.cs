@@ -39,7 +39,7 @@ namespace INSTaskTracker.Admin
                               select c).FirstOrDefault();
                 if (myUser != null)
                 {
-                    projects.AddProject(AddProjectName.Text, AddProjectEstimatedTime.Text,
+                    projects.AddProject(AddProjectName.Text, 0,
                     AddProjectDescription.Text, startDate.Date, myUser.Id);
                     // Reload the page.
                     string pageUrl = Request.Url.AbsoluteUri.Substring(0,

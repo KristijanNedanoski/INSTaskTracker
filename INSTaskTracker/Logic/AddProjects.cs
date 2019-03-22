@@ -14,12 +14,12 @@ namespace INSTaskTracker.Logic
 {
     public class AddProjects
     {
-        public bool AddProject(string PName, string eTime, string Des, DateTime sDate, string User)
+        public bool AddProject(string PName, int eTime, string Des, DateTime sDate, string User)
         {
             var myProject = new Models.Project
             {
                 ProjectName = PName,
-                ETime = Convert.ToInt32(eTime),
+                ETime = eTime,
                 Description = Des,
                 UserID = User,
                 StartDate = sDate.Date,

@@ -27,6 +27,11 @@ namespace INSTaskTracker.Logic
             };
             using (ApplicationDbContext _db = new ApplicationDbContext())
             {
+                // Adding Assignment estimated time project entry in the database
+                var myProject = (from c in _db.Projects
+                                 where c.ProjectID == project
+                                 select c).FirstOrDefault();
+                myProject.ETime += Convert.ToInt32(eTime);
                 // Add assignments to DB.
                 _db.Assignments.Add(myAssignment);
                 try
